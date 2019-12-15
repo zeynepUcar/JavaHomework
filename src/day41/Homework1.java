@@ -1,6 +1,6 @@
 package day41;
 
-//public class Homework1 {
+public class Homework1 {
 //    //*********************************************************************************************
 //    // What will be the output of the following Java program?
 //
@@ -19,14 +19,14 @@ package day41;
 //    }
 //}
     //*********************************************************************************************
-   // What will be the output of the following Java program?
+    // What will be the output of the following Java program?
 
-     //RESULT Compile time error
+    //RESULT 10
 //
 //    class A
 //    {
-//        int i = 10;
-//    }
+//        int i = 10;       //data members cant be overridden
+//    }                       // only public methods cen be overridden
 //
 //    class B extends A
 //    {
@@ -47,203 +47,202 @@ package day41;
 //    //*********************************************************************************************
 //    //What will be the output of the following Java program?
 
-      //RESULT Compile time error
-
-//    class A
+//What will be the output of the following Java program?   OUTPUT IS      1 2 3
+//    public static void main(String[] args)
 //    {
-//        {
-//            System.out.println(1);
-//        }
+//        C c = new C();  // SAME OUTPUT WITH BELOW
+//        A a = new C();
 //    }
+//}
+//class A
+//{
+//    {
+//        System.out.println(1);
+//    }
+//}
 //
-////    class B extends A
-//    class B
+//class B extends A
+//{
 //    {
-//        {
-//            System.out.println(2);
-//        }
+//        System.out.println(2);
 //    }
+//}
 //
-//    class C
+//class C extends B
+//{
 //    {
-//        {
-//            System.out.println(3);
-//        }
+//        System.out.println(3);  // it is not overidingg, just printing
 //    }
+//}
 
-//    public class MainClass
 
-//    class MainClass
-//    {
-//        public static void main(String[] args)
-//        {
-//            C c = new C();
-//        }
-//    }
 //    //*********************************************************************************************
 //   // What will be the output of the following Java program?
 
-     // RESULT Compile time error
-//    class A
+//What will be the output of the following Java program?   //Output is Class A
+    //Class B
+    //Class C
+//public static void main(String[] args)
 //    {
-//        String s = "Class A";
+//        C c = new C();
+//
+//        System.out.println(c.s);
 //    }
+//}
+//class A
+//{
+//    String s = "Class A";
+//}
 //
-//    class B extends A
-//    {
-//        String s = "Class B";
-//
-//        {
-//            System.out.println(super.s);
-//        }
-//    }
-//
-//    class C extends B
-//    {
-//        String s = "Class C";
-//
-//        {
-//            System.out.println(super.s);
-//        }
-//    }
-//
-////    public class MainClass
-//    class MainClass
-//
+//class B extends A
+//{
+//    String s = "Class B";
 //
 //    {
-//        public static void main(String[] args)
-//        {
-//            C c = new C();
-//
-//            System.out.println(c.s);
-//        }
+//        System.out.println(super.s);
 //    }
-//    //*********************************************************************************************
-//   // What will be the output of the following Java program?
+//}
+//
+//class C extends B
+//{
+//    String s = "Class C";
+//
+//    {
+//        System.out.println(super.s);
+//    }
+//}
+////    //*********************************************************************************************
+//   // What will be the output of the following Java program?   //    OUTPUT IS   THIRD SECOND  FIRST
 
-//    RESULT Compile time error
 
-//    class A
-//    {
-//        static
-//        {
-//            System.out.println("THIRD");
-//        }
-//    }
-//
-//    class B extends A
-//    {
-//        static
-//        {
-//            System.out.println("SECOND");
-//        }
-//    }
-//
-//    class C extends B
-//    {
-//        static
-//        {
-//            System.out.println("FIRST");
-//        }
-//    }
-//
-////    public class MainClass
-//    class MainClass
-//    {
-//        public static void main(String[] args)
-//        {
-//            C c = new C();
-//        }
-//    }
-//    //*********************************************************************************************
-//   // What will be the output of the following Java program?
+//IQ: what is static?, how is it used, why we have to use.
+//compiler will go to static first. Debug and you will see.
+//why we have to use?
+//when you need to share it among other classes or objects,
+//without create an instance on a new class.
 
-//RESULT Compile time error
+    //how is it used.
+    // StaticInstanceExample.val = 45;
 
-//    class A
+
+//    public static void main(String[] args)
 //    {
-//        public A()
-//        {
-//            System.out.println("Class A Constructor");
-//        }
+//        C c = new C();
 //    }
+//}
 //
-//    class B extends A
+//class A
+//{
+//    static      //compiler will go to static first
+//               //if have static , it goes static first not class
 //    {
-//        public B()
-//        {
-//            System.out.println("Class B Constructor");
-//        }
+//        System.out.println("THIRD");
 //    }
+//}
 //
-//    class C extends B
+//class B extends A
+//{
+//    static
 //    {
-//        public C()
-//        {
-//            System.out.println("Class C Constructor");
-//        }
+//        System.out.println("SECOND");
 //    }
+//}
 //
-////    public class MainClass
-//    class MainClass
+//class C extends B
+//{
+//    static    //sharing
 //    {
-//        public static void main(String[] args)
-//        {
-//            C c = new C();
-//        }
+//        System.out.println("FIRST");
 //    }
+//}
 //
 //    //*********************************************************************************************
 //   // What will be the output of the following Java program?
+    // OUTPUT IS
+    //Class A Constructor
+    //    Class B Constructor
+    //    Class C Constructor
 
-// RESULT Compile time error
+//    public static void main(String[] args)
+//    {
+//        C c = new C();
+//    }
+//}
+//
+//class A
+//{
+//    public A()
+//    {
+//        System.out.println("Class A Constructor");
+//    }
+//}
+//
+//class B extends A
+//{
+//    public B()
+//    {
+//        System.out.println("Class B Constructor");
+//    }
+//}
+//
+//class C extends B
+//{
+//    public C()
+//    {
+//        System.out.println("Class C Constructor");
+//    }
+//}
 
-//    class X
-//    {
-//        static void staticMethod()
-//        {
-//            System.out.println("Class X");
-//        }
-//    }
+
 //
-//    class Y extends X
-//    {
-//        static void staticMethod()
-//        {
-//            System.out.println("Class Y");
-//        }
-//    }
-//
-////    public class MainClass
-//    class MainClass
-//    {
-//        public static void main(String[] args)
-//        {
-//            Y.staticMethod();
-//        }
-//    }
 //    //*********************************************************************************************
 //   // What will be the output of the following Java program?
 
-//RESULT Compile time error
+    //OUTPUT IS Class Y
 
-//    class X
+//    public static void main(String[] args)
 //    {
-//        public X(int i)
-//        {
-//            System.out.println(1);
-//        }
+//        Y.staticMethod();
+//    }
+//}
+//class X
+//{
+//    static void staticMethod()
+//    {
+//        System.out.println("Class X");
+//    }
+//}
+//
+//class Y extends X
+//{
+//    static void staticMethod()
+//    {
+//        System.out.println("Class Y");
+//    }
+//}
+
+//    //*********************************************************************************************
+//   // What will be the output of the following Java program?
+
+//    public static void main(String[] args) {
+//        Y y = new Y ();
+//    }
+//}
+//
+//class X {
+//    public X(int i) {
+//        System.out.println ( 1 );
 //    }
 //
-//    class Y extends X
-//    {
-////        public Y()
-//        public Y(int i) // added parameter
-//
-//        {
-//            super(i); // added  super(i);
-//            System.out.println(2);
-//        }
+//    public X() {
+//        System.out.println ( 1 );
 //    }
-
+//}
+//
+//class Y extends X {
+//    public Y() {
+//        super ();
+//        System.out.println ( 2 );
+//    }
+//}
+}

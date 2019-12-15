@@ -3,15 +3,18 @@ package day41;
 public class Homework2 {
 //    Which two classes use the Shape class correctly?
 //
-//    A. public class Circle implements Shape
+//    A.
+//    public class Circle implements Shape   // shape is belong to the interface
 //    {
 //        private int radius;
 //    }
-//    B. public abstract class Circle extends Shape
+//    B.
+//    public abstract class Circle extends Shape
 //    {
 //        private int radius;
 //    }
-//    C. public class Circle extends Shape
+//    C.
+//    public class Circle extends Shape
 //    {
 //        private int radius;
 //        public void draw();
