@@ -38,14 +38,13 @@ public class CheckBox2 {
         for (int i = 0; i < elements1.size(); i++) {
             elements1.get(i).click();
 
-        }
+            String text2 = driver.findElement(By.id("check1")).getAttribute("value");
 
-        String text2 = driver.findElement(By.id("check1")).getAttribute("value");
-
-        if (text2.equals("Check All")){
-            System.out.println("Pass");
-        }else {
-            System.out.println("Fail");
+            if (text2.equals("Check All")) {
+                System.out.println("Pass");
+            } else {
+                System.out.println("Fail");
+            }
         }
 
 
