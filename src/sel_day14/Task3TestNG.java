@@ -28,7 +28,7 @@ public class Task3TestNG {
 
         WebElement message = driver.findElement( By.cssSelector( ".alert-normal-success" ) );
 
-        WebElement button = driver.findElement( By.cssSelector( ".alert-normal-success > button" ) );
+        WebElement button = driver.findElement( By.cssSelector( ".alert-normal-success > button" ) ); //immediate child
 
         String text = message.getText().replace( button.getText(), "" ).trim();
         String test = "I'm a normal success message. To close use the appropriate button.";
